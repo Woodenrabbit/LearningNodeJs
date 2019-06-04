@@ -1,0 +1,42 @@
+<head>
+  {{>head}}
+</head>
+<style>
+#content{
+    height: 385px;
+}
+#preview{
+    height: 460px;
+    overflow: auto;
+}
+</style>
+
+<script src='http://cdn.bootcss.com/marked/0.3.2/marked.min.js'></script>
+
+<form method="post" action="/post/{{id}}">
+  <div  class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label for="title">标题</label>
+        <input id="title" name="title" class="form-control">
+      </div>
+      <textarea id="content" name="content" class="form-control"></textarea>
+    </div>
+    
+    <div class="col-sm-6">
+      <div id="preview"></div>
+    </div>
+  </div>
+  <button type='submit' class='btn btn-success'>创建</button>
+</form>
+
+<script>
+
+    $(function(){
+        $('#content')
+            .bind('input propertychange', function(){
+                $('#preview').html(marked($('#content').val()));
+            })
+            .trigger('input');
+    });
+</script>

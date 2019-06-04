@@ -1,0 +1,38 @@
+<html>
+<head>
+  {{>head}}
+</head>
+<body id="profile">
+
+<div class="center-wrapper">
+  <div class="center">
+    <h3>User profile</h3>
+    <form>
+        <div class="form-group">
+            <img class="pull-left" src="">
+            <div>
+            <label for="avatar">头像</label>
+            <input type="file" name="avatar" accept="image/*">
+            <p class="help-block">在这里选择并上传你的头像</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="title">博客名称</label>
+            <input type="text" class="form-control" id="title" name="title" 
+            placeholder="张三的博客" value="">
+        </div>
+
+        <div class="form-group">
+            <label for="description">博客描述</label>
+            <input type="text" class="form-control" id="description" name="description" 
+            placeholder="这是一个了不起的博客..." value="">
+        </div>
+        
+        <button type="submit" class="btn btn-default">保存</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
