@@ -10,8 +10,8 @@ var multipart = require('connect-multiparty');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+//var indexRouter = require('./routes/index');
+//var usersRouter = require('./routes/users');
 var User = require('./models/user');
 var app = express();
 
@@ -37,11 +37,11 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
 app.use('/account', require('./routes/account'));
-app.use('/admin', require('./routes/admin'));
-app.use('/post', require('./routes/post'));
+app.use('/admin', require('./routes/admin/index'));
+// app.use('/post', require('./routes/post'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

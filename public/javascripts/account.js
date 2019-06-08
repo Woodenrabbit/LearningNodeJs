@@ -20,7 +20,7 @@ function login(){
     $.post('./login', $('form').serialize())
         .done(function(arg1,arg2,res){
             if(res.status === 200)
-            window.location.href = "../";
+            window.location.href = "../admin/post";
         })
         .fail(function(res){
             warn(res.responseText);

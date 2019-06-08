@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var Post = require('../models/post.js');
+var Post = require('../../models/post.js');
 
 router.route('/')
     .get(function (req, res, next) {
         Post.find({author: req.user.id}, function(err, posts){
             if(err) return next(err);
 
-            res.render('admin/posts', {
+            res.render('index', {
                 posts: posts
             });
         });
@@ -23,7 +23,7 @@ router.route('/new')
             content: req.body.content,
             author: req.user.id
         }, function (err, post) {
-            if (err) return next(err);
+            if (err) console.log(err);//return next(err);
             else return res.redirect('/admin/post');
         });
     });
