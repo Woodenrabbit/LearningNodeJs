@@ -9,6 +9,7 @@ var passport = require('passport');
 var multipart = require('connect-multiparty');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
+var config = require('./config');
 
 //var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');

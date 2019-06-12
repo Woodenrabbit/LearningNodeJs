@@ -1,0 +1,24 @@
+grunt.initConfig({
+    watch:{
+        js:{
+            files:['**/*.js','!**/node_modules/**','!public/**'],
+            tasks:['express:dev'],
+            options:{atBegin:true}
+        },
+        livereload:{
+            options:{livereload:true},
+            files:['./core/public/**/*','./core/views/*']
+        }
+    },
+    concurrent:{
+        watch:{
+            tasks:['watch:js','watch:livereload'],
+            options:{logConcurrentOutput:true}
+        }
+    }
+});
+
+//grunt.loadNpmTasks('grunt-contrib-watch');
+//grunt.registerTask('dev',['express:dev','watch:dev']);
+grunt.loadNpmTasks('grunt-concurrent');
+grunt.registerTask('dev',['concurrent:watch']);

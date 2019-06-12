@@ -2,26 +2,43 @@
 <head>
   {{>head}}
 </head>
-<body id="register">
+<body id="register" style="background-color:#f6f6f6">
 
-<div class="center-wrapper">
-  <div class="center">
-    <h3>TMY BLOG</h3>
-    <form class="form" method="post">
+<div class="container">
+  <h1 class="text-center">Welcome to my blog</h1>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8"><h5 class="text-right">--woodenrabbit</h5></div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8" style="background-color:white">
+      <form class="form" method="post">
+        <div class="form-group">
+          <label for="exampleInputEmail">Email address</label>
+          <input name="username" type="email" class="form-control" placeholder="邮箱">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input name="password" type="password" class="form-control" placeholder="密码">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword2">Password</label>
+          <input id="password1" type="password" class="form-control" placeholder="重复密码"/>
+        </div>
 
-      <input name="username" type="text" class="form-control" placeholder="邮箱">
-      <input name="password" type="password" class="form-control" placeholder="密码">
-      <input id="password1" type="password" class="form-control" placeholder="重复密码"/>
+        <div class="alert alert-danger" style="display: none;"></div>
+        <div class="alert alert-success" style="display: none;"></div>
 
-      <div class="alert alert-danger" style="display: none;"></div>
-      <div class="alert alert-success" style="display: none;"></div>
-
-      <div class="pull-right">
-        <a class="btn btn-link" onclick="login()">直接登录</a>
-        <a class="btn btn-success" onclick="signup()">注册</a>
-        {{!-- <input class="btn btn-success" type="submit" value="注册"> --}}
-      </div>
-    </form>
+        <div class="pull-right">
+          <a class="btn btn-warning" onclick="login()">直接登录</a>
+          <a class="btn btn-success" onclick="signup()">注册</a>
+          {{!-- <input class="btn btn-success" type="submit" value="注册"> --}}
+        </div>
+      </form>
+    </div>
+    <div class="col-2"></div>
   </div>
 </div>
 
